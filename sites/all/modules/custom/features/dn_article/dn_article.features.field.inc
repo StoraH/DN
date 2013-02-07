@@ -200,7 +200,7 @@ function dn_article_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
-            'image_link' => 'content',
+            'image_link' => '',
             'image_style' => 'thumbnail',
           ),
           'type' => 'image',
@@ -278,10 +278,14 @@ function dn_article_field_default_fields() {
           'weight' => 3,
         ),
         'teaser' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
+          'label' => 'hidden',
+          'module' => 'title',
+          'settings' => array(
+            'title_class' => 'box-title',
+            'title_link' => '',
+            'title_style' => 'h2',
+          ),
+          'type' => 'title_linked',
           'weight' => '1',
         ),
       ),
