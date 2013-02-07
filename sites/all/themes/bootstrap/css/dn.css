@@ -2,9 +2,14 @@
   position: relative;
 
   width: 19%;
+  max-width: 150px;
   margin: .5%;
 
   border-bottom: 10px solid;
+}
+
+.views-row .box {
+  float: left;
 }
 
 .box-title {
