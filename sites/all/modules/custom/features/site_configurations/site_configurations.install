@@ -6,7 +6,7 @@
  */
 
 function site_configurations_update_7100() {
-  
+
   //fetch newly craeted vocabulary ID
   $vid = db_query("SELECT vid FROM {taxonomy_vocabulary} WHERE machine_name = 'category'")->fetchField();
 
@@ -24,4 +24,25 @@ function site_configurations_update_7100() {
   	$term->vid = $vid;
   	taxonomy_term_save($term);
 	}
+}
+
+function site_configurations_update_7101() {
+  //a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}
+  //a:3:{s:5:"width";s:3:"150";s:6:"height";s:3:"140";s:7:"upscale";i:1;}
+  $image_style =
+
+  $image_style_large = db_update('image_effects') // Table name no longer needs {}
+  ->fields(array(
+    'data' => 'a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
+  ))
+  ->condition('isid', '2', '=')
+  ->execute();
+
+  $image_style_thumbnail = db_update('image_effects') // Table name no longer needs {}
+  ->fields(array(
+    'data' => 'a:3:{s:5:"width";s:3:"150";s:6:"height";s:3:"140";s:7:"upscale";i:1;}'
+  ))
+  ->condition('isid', '1', '=')
+  ->execute();
+
 }
