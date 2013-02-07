@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update, and uninstall functions for the admin menu module.
+ * Imports standard taxonomyterms for category.
  */
 
 function site_configurations_update_7100() {
@@ -26,6 +26,10 @@ function site_configurations_update_7100() {
 	}
 }
 
+/**
+ * @file
+ * Update default imagestyles
+ */
 function site_configurations_update_7101() {
   //a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}
   //a:3:{s:5:"width";s:3:"150";s:6:"height";s:3:"140";s:7:"upscale";i:1;}
