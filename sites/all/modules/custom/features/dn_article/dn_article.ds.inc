@@ -50,12 +50,12 @@ function dn_article_ds_layout_settings_info() {
     'regions' => array(
       'main' => array(
         0 => 'field_image',
-        1 => 'title',
+        1 => 'title_field',
       ),
     ),
     'fields' => array(
       'field_image' => 'main',
-      'title' => 'main',
+      'title_field' => 'main',
     ),
     'classes' => array(),
     'wrappers' => array(
