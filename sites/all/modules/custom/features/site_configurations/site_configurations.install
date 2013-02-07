@@ -1,12 +1,24 @@
 <?php
 
 /**
+ *
+ */
+function site_configurations_install() {
+  _create_tax_category();
+  _update_default_imagestyle();
+
+}
+/**
  * @file
- * Imports standard taxonomyterms for category.
+ * Imports standard taxonomyterms for category. Change default iamgestyle settings
  */
 
 function site_configurations_update_7100() {
+  _create_tax_category();
+  _update_default_imagestyle();
+}
 
+function _create_tax_category() {
   //fetch newly craeted vocabulary ID
   $vid = db_query("SELECT vid FROM {taxonomy_vocabulary} WHERE machine_name = 'category'")->fetchField();
 
@@ -25,16 +37,7 @@ function site_configurations_update_7100() {
   	taxonomy_term_save($term);
 	}
 }
-
-/**
- * @file
- * Update default imagestyles
- */
-function site_configurations_update_7101() {
-  //a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}
-  //a:3:{s:5:"width";s:3:"150";s:6:"height";s:3:"140";s:7:"upscale";i:1;}
-  $image_style =
-
+function _update_default_imagestyle() {
   $image_style_large = db_update('image_effects') // Table name no longer needs {}
   ->fields(array(
     'data' => 'a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
@@ -48,5 +51,4 @@ function site_configurations_update_7101() {
   ))
   ->condition('isid', '1', '=')
   ->execute();
-
 }
