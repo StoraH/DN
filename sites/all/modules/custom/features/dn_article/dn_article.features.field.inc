@@ -56,7 +56,7 @@ function dn_article_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'entity_type' => 'node',
@@ -116,7 +116,11 @@ function dn_article_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'article',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'tid' => '2',
+        ),
+      ),
       'deleted' => '0',
       'description' => 'Select category',
       'display' => array(
@@ -131,13 +135,14 @@ function dn_article_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'node',
+      'fences_wrapper' => 'div',
       'field_name' => 'field_category',
       'label' => 'Category',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -155,7 +160,7 @@ function dn_article_field_default_fields() {
   $fields['node-article-field_image'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_image',
@@ -462,7 +467,7 @@ function dn_article_field_default_fields() {
   $fields['node-article_payed-field_image'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_image',
@@ -538,11 +543,60 @@ function dn_article_field_default_fields() {
     ),
   );
 
+  // Exported field: 'taxonomy_term-category-field_color'.
+  $fields['taxonomy_term-category-field_color'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_color',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'jquery_colorpicker',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'jquery_colorpicker',
+    ),
+    'field_instance' => array(
+      'bundle' => 'category',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'jquery_colorpicker',
+          'settings' => array(),
+          'type' => 'jquery_colorpicker_color_display',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'no_wrapper',
+      'field_name' => 'field_color',
+      'label' => 'Färg',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'jquery_colorpicker',
+        'settings' => array(),
+        'type' => 'jquery_colorpicker',
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
   t('Body');
   t('Category');
+  t('Färg');
   t('Image');
   t('Select category');
   t('Tag article');

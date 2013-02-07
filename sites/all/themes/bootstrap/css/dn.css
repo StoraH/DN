@@ -3,10 +3,13 @@
 
   width: 19%;
   margin: .5%;
+
+  border-bottom: 10px solid;
 }
 
 .box-title {
   position: absolute;
+  right: 0;
   bottom: 0;
   left: 0;
 
