@@ -1,12 +1,23 @@
 <?php
 
 /**
+ *
+ */
+function site_configurations_install() {
+  _create_tax_category();
+  _set_default_imagestyle();
+}
+/**
  * @file
- * Install, update, and uninstall functions for the admin menu module.
+ * Imports standard taxonomyterms for category. Change default iamgestyle settings
  */
 
 function site_configurations_update_7100() {
+  _create_tax_category();
+  _set_default_imagestyle();
+}
 
+function _create_tax_category() {
   //fetch newly craeted vocabulary ID
   $vid = db_query("SELECT vid FROM {taxonomy_vocabulary} WHERE machine_name = 'category'")->fetchField();
 
@@ -25,11 +36,8 @@ function site_configurations_update_7100() {
   	taxonomy_term_save($term);
 	}
 }
+function _update_default_imagestyle() {
 
-function site_configurations_update_7101() {
-  //a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}
-  //a:3:{s:5:"width";s:3:"150";s:6:"height";s:3:"140";s:7:"upscale";i:1;}
-  $image_style =
 
   $image_style_large = db_update('image_effects') // Table name no longer needs {}
   ->fields(array(
@@ -43,6 +51,28 @@ function site_configurations_update_7101() {
     'data' => 'a:3:{s:5:"width";s:3:"150";s:6:"height";s:3:"140";s:7:"upscale";i:1;}'
   ))
   ->condition('isid', '1', '=')
+  ->execute();
+}
+
+function _set_default_imagestyle() {
+    $image_style_large = db_insert('image_effects') // Table name no longer needs {}
+  ->fields(array(
+    'ieid' => '1',
+    'isid' => '1',
+    'weight' => '0',
+    'name' => 'image_style',
+    'data' => 'a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
+  ))
+  ->execute();
+
+  $image_style_thumbnail = db_insert('image_effects') // Table name no longer needs {}
+  ->fields(array(
+    'ieid' => '2',
+    'isid' => '2',
+    'weight' => '0',
+    'name' => 'image_style',
+    'data' => 'a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
+  ))
   ->execute();
 
 }
