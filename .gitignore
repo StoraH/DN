@@ -5,5 +5,7 @@
 .htaccess
 robots.txt
 .DS_Store
+*.swp
+
 
 # Ignore everything but the "sites" folder ( for non core developer )
