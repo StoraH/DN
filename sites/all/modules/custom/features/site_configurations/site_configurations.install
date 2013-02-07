@@ -4,8 +4,8 @@
  *
  */
 function site_configurations_install() {
-  _create_tax_category();
-  _set_default_imagestyle();
+//  _create_tax_category();
+//  _set_default_imagestyle();
 }
 /**
  * @file
@@ -36,6 +36,7 @@ function _create_tax_category() {
   	taxonomy_term_save($term);
 	}
 }
+
 function _update_default_imagestyle() {
 
 

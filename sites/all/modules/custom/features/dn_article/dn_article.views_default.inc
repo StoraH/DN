@@ -80,7 +80,7 @@ function dn_article_views_default_views() {
   $handler = $view->new_display('page', 'Article', 'page_1');
   $handler->display->display_options['display_description'] = 'List all articles';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'article-date';
+  $handler->display->display_options['path'] = 'home';
   $export['article'] = $view;
 
   return $export;
