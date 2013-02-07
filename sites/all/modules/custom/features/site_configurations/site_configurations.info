@@ -6,6 +6,7 @@ dependencies[] = admin_menu
 dependencies[] = ctools
 dependencies[] = devel
 dependencies[] = features
+dependencies[] = jquery_update
 dependencies[] = module_filter
 dependencies[] = search_krumo
 dependencies[] = strongarm
