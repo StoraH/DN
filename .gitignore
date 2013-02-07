@@ -4,5 +4,6 @@
 # Ignore default text files
 .htaccess
 robots.txt
+.DS_Store
 
 # Ignore everything but the "sites" folder ( for non core developer )
