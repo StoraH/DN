@@ -1,0 +1,13 @@
+name = Site configurations
+core = 7.x
+package = DN
+dependencies[] = admin_menu
+dependencies[] = ctools
+dependencies[] = devel
+dependencies[] = features
+dependencies[] = module_filter
+dependencies[] = search_krumo
+dependencies[] = strongarm
+dependencies[] = views
+dependencies[] = views_ui
+features[features_api][] = api:1
