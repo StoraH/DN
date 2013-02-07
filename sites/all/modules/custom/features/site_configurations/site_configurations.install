@@ -1,0 +1,21 @@
+<?php
+
+function site_configuration_update_7100() {
+  //fetch newly craeted vocabulary ID
+  $vid = db_query("SELECT vid FROM {taxonomy_vocabulary} WHERE machine_name = 'category'")->fetchField();
+
+// Define all term names to save
+	$terms[] = 'Sport';
+	$terms[] = 'Debatt';
+	$terms[] = 'Ekonomi';
+	$terms[] = 'Kultur & Nöje';
+	$terms[] = 'Ledare';
+
+	// save the terms
+	foreach ($terms as $singel_term ) {
+		$term = new stdClass();
+  	$term->name = $singel_term;
+  	$term->vid = $vid;
+  	taxonomy_term_save($term);
+	}
+}
