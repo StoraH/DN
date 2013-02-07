@@ -5,8 +5,7 @@
  */
 function site_configurations_install() {
   _create_tax_category();
-  _update_default_imagestyle();
-
+  _set_default_imagestyle();
 }
 /**
  * @file
@@ -15,7 +14,7 @@ function site_configurations_install() {
 
 function site_configurations_update_7100() {
   _create_tax_category();
-  _update_default_imagestyle();
+  _set_default_imagestyle();
 }
 
 function _create_tax_category() {
@@ -38,6 +37,8 @@ function _create_tax_category() {
 	}
 }
 function _update_default_imagestyle() {
+
+
   $image_style_large = db_update('image_effects') // Table name no longer needs {}
   ->fields(array(
     'data' => 'a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
@@ -51,4 +52,27 @@ function _update_default_imagestyle() {
   ))
   ->condition('isid', '1', '=')
   ->execute();
+}
+
+function _set_default_imagestyle() {
+    $image_style_large = db_insert('image_effects') // Table name no longer needs {}
+  ->fields(array(
+    'ieid' => '1',
+    'isid' => '1',
+    'weight' => '0',
+    'name' => 'image_style',
+    'data' => 'a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
+  ))
+  ->execute();
+
+  $image_style_thumbnail = db_insert('image_effects') // Table name no longer needs {}
+  ->fields(array(
+    'ieid' => '2',
+    'isid' => '2',
+    'weight' => '0',
+    'name' => 'image_style',
+    'data' => 'a:3:{s:5:"width";s:3:"500";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
+  ))
+  ->execute();
+
 }
