@@ -32,3 +32,16 @@
 .box img {
   width: 100%;
 }
+
+.view-content h3 {
+    display: block;
+    float: left;
+    margin: 1%;
+    max-width: 150px;
+    width: 19%;
+    clear: left;
+}
+
+.pager-load-more {
+  clear:both;
+}
