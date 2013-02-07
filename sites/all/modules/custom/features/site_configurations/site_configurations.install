@@ -1,6 +1,12 @@
 <?php
 
-function site_configuration_update_7100() {
+/**
+ * @file
+ * Install, update, and uninstall functions for the admin menu module.
+ */
+
+function site_configurations_update_7100() {
+  
   //fetch newly craeted vocabulary ID
   $vid = db_query("SELECT vid FROM {taxonomy_vocabulary} WHERE machine_name = 'category'")->fetchField();
 
