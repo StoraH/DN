@@ -14,7 +14,8 @@ function site_configurations_install() {
 
 function site_configurations_update_7100() {
   _create_tax_category();
-  _update_default_imagestyle();
+  //_update_default_imagestyle();
+//  _set_default_imagestyle();
 }
 
 function _create_tax_category() {
