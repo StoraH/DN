@@ -59,42 +59,55 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   clear:both;
 }
 
-.form-type-bef-link {
+.bef-checkboxes {
   display: inline;
   overflow: hidden;
+  float: left;
 }
 
-.bef-select-as-links {
+.bef-checkboxes {
   margin: 12px 0 0 2em;
 }
 
-.form-type-bef-link a{
+.bef-checkboxes [type="checkbox"] {
+    display: none;
+}
+
+.bef-checkboxes .form-item {
+  float: left;
+}
+
+.bef-checkboxes label {
   background-color: #FFFFFF;
   border-radius: 22px 22px 22px 22px;
   display: block;
-  float: left;
   height: 22px;
   text-indent: -99999px;
   width: 22px;
   margin: 0 0.5em 0 0;
 }
 
-#edit-tid-1 a{
+.bef-checkboxes [type="checkbox"]:checked + label {
+    background-image: url("../pushed.png");
+    background-position: center center;
+}
+
+label[for="edit-tid-1"] {
   background-color: #9a7730;
 }
 
-#edit-tid-2 a{
+label[for="edit-tid-2"] {
   background-color: #FF0000;
 }
 
-#edit-tid-3 a{
+label[for="edit-tid-3"] {
   background-color: #247810;
 }
 
-#edit-tid-4 a {
+label[for="edit-tid-4"] {
   background-color: #30559a;
 }
 
-#edit-tid-5 a {
+label[for="edit-tid-5"] {
   background-color: #ffdd00;
 }

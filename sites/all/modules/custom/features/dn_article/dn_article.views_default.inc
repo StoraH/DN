@@ -35,7 +35,7 @@ function dn_article_views_default_views() {
       'secondary_label' => 'Advanced options',
     ),
     'tid' => array(
-      'bef_format' => 'bef_links',
+      'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_select_all_none_nested' => 0,
@@ -113,9 +113,10 @@ function dn_article_views_default_views() {
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
   $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
   $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'tid';
+  $handler->display->display_options['filters']['tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
+    1 => '1',
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'category';
