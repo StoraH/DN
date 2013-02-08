@@ -34,14 +34,58 @@
 }
 
 .view-content h3 {
-    display: block;
-    float: left;
-    margin: 1%;
-    max-width: 150px;
-    width: 19%;
-    clear: left;
+  display: block;
+  float: left;
+  margin: 1%;
+  max-width: 150px;
+  width: 19%;
+  clear: left;
 }
 
 .pager-load-more {
   clear:both;
+}
+
+.form-type-bef-link {
+    display: inline;
+    overflow: hidden;
+}
+
+.bef-select-as-links {
+  margin: 12px 0 0 2em;
+}
+
+.form-type-bef-link a{
+  background-color: #FFFFFF;
+  border-radius: 22px 22px 22px 22px;
+  display: block;
+  float: left;
+  height: 22px;
+  text-indent: -99999px;
+  width: 22px;
+  margin: 0 0.5em 0 0;
+}
+
+#edit-tid-1 {
+
+}
+
+#edit-tid-2 {
+
+}
+
+#edit-tid-3 {
+
+}
+
+#edit-tid-4 {
+
+}
+
+#edit-tid-5 {
+
+}
+
+.views-widget-filter-tid label {
+  display: none;
 }
