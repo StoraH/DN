@@ -205,7 +205,7 @@ function dn_article_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
-            'image_link' => 'content',
+            'image_link' => '',
             'image_style' => 'thumbnail',
           ),
           'type' => 'image',
